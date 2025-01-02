@@ -3,23 +3,26 @@
 int main ()
 {
 	float sum, i ;
-	char c = 1;
-	sum = 0 ;
+	char c = ' ';
 
 	printf ("Enter an expression : ");
-
-	getchar () ;	
-	while (c)
+	scanf ("%f", &sum) ;
+	while (1)
 	{
-		scanf ("%f%c", &i, &c);
-		if (c == '+')
-			sum += i ;
-		else if (c == '-')
-			sum -= i ;
-		else if (c == '*')
-			sum *= i ;
-		else if (c == '/')
-			sum /= i ;
+		scanf ("%c", &c);
+
+		if (c == '+' || c == '-' || c == '*' || c == '/')
+		{
+			scanf ("%f", &i);
+			if (c == '+')
+				sum += i ;
+			else if (c == '-')
+				sum -= i ;
+			else if (c == '*')
+				sum *= i ;
+			else if (c == '/')
+				sum /= i ;
+		}
 		else
 			break ;
 	}
