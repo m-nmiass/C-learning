@@ -76,7 +76,7 @@ int password_check (int upper, int lower, int digit, int special, int characters
 void result (int count)
 {
 	printf ("Your password is :");
-	if (count < 3)
+	if (count <= 3)
 		printf ("Weak");
 	else if (count < 5)
 		printf ("Moderate");

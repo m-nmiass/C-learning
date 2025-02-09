@@ -3,6 +3,7 @@
 #include <stdbool.h>
 
 void input_read();
+void encode();
 
 int main ()
 {
