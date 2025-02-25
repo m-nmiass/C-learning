@@ -2,18 +2,24 @@
 
 char *ft_strncpy(char *s1, const char *s2, int n)
 {
-	if (!s1 || !s2)
-		return NULL ;
+	if (!s1 || !s2 || !n)
+		return s1 ;
 
-	char *temp = s1 ;
-	while ((*s1++ = *s2++) != '\0' && n)
-		n--;
+	size_t i = 0 ;
 
-	while (n)
+	while (i < n && s2[i] != '\0')
 	{
-		*s1++ = '\0';
-		n--;
+		s1[i] = s2[i] ;
+		i++;
 	}
 
-	return temp ;
+
+	while (i < n)
+	{
+		s1[i] = '\0';
+		i++;
+	}
+
+	return s1 ;
 }
+
