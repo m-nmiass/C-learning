@@ -1,4 +1,4 @@
-size_t *ft_strncpy(char *s1, const char *s2, size_t n)
+char *ft_strncpy(char *s1, const char *s2, size_t n)
 {
 	if (!s1 || !s2)
 		return NULL;
