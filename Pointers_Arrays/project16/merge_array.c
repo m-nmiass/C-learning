@@ -20,7 +20,6 @@ int main()
 	if(OUT_OF_RANGE) printf("Invalide input try again : ");
 	}while(OUT_OF_RANGE);
 	size_arr = size;
-	getchar();
 	
 	read_array(0, size_arr);
 
@@ -29,7 +28,6 @@ int main()
 	scanf("%d", &size);
 	if(OUT_OF_RANGE) printf("Invalide input try again ; ");
 	}while(OUT_OF_RANGE);
-	getchar();
 	size_brr = size;
 
 	read_array(size_arr, size_arr + size_brr);
@@ -41,12 +39,12 @@ void read_array(int start, int end)
 {
 	printf("Enter the array : ");
 	for(char *p = crr + start; p < crr + end; p++)
-		scanf("%c", p);
+		scanf(" %c", p);
 }
 
 void print_array(int size)
 {
 	printf("The merged array is : ");
 	for(char *p = crr; p < crr + size; p++)
-		printf("%c", *p);
+		printf("%c ", *p);
 }
