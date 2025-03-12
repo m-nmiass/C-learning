@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdbool.h>
+#include<ctype.h>
 
 #define SIZE 100
 
@@ -20,10 +21,13 @@ int main()
 
 void read_string(char *arr)
 {
+	char c;
 	char *p = arr ;
 	printf ("Enter the string up to %d characters : ", SIZE);
-	while((*p = getchar()) != '\n' && p < arr + SIZE)
-		p++;
+	while((c = getchar()) != '\n' && p < arr + SIZE) {
+		if (isalnum(c))
+			*p++ = tolower(c);
+	}
 	*p ='\0';
 }
 
