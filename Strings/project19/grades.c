@@ -80,7 +80,7 @@ void ft_swap(int *a, int *b)
 void ft_swap_string(char *str1, char *str2)
 {
 	char temp[MAX_NAME] ;
-	strcat(temp, str1);
-	strcat(str1, str2);
-	strcat(str2, temp);
+	strcpy(temp, str1);
+	strcpy(str1, str2);
+	strcpy(str2, temp);
 }
