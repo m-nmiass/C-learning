@@ -33,6 +33,9 @@ void read_name(char *name)
 	char ch;
 	int i = 0;
 
+	while((ch = getchar()) == ' ' || ch == '\t');
+	name[i++] = ch;
+
 	while((ch = getchar()) != '\n') {
 		if(i < SIZE)
 			name[i++] = ch;
