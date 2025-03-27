@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<operations.h>
+#include"opperations.h"
 
 int main()
 {
@@ -23,9 +23,9 @@ int main()
 	else if(operation == 3)
 		printf("%d * %d = %d", x, y, mul(x, y));
 	else if (operation == 4)
-		printf("%d / %d = %d", x, y, div(x, y));
+		printf("%d / %d = %d", x, y, dev(x, y));
 	else if (operation == 5)
-		printf("%d % %d = %d", x, y, dev(x, y));
+		printf("%d %% %d = %d", x, y, dev(x, y));
 	else
 		printf("Invalid operation");
 }
