@@ -11,7 +11,8 @@ int main()
 
 	printf("Enter the array size : ");
 	scanf("%d", &size);
-	
+
+		
 	printf("Enter the array characters : ");
 	for(int i = 0; i < size; i++)
 		scanf("%d", &arr[i]);
@@ -22,5 +23,5 @@ int main()
 
 	printf("The minimun element is : %d\n", min);
 	printf("The maximun element is : %d\n", max);
-	printf("The sum of all element is : %d", max);
+	printf("The sum of all element is : %d", sum);
 }

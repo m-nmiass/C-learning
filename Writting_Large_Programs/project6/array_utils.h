@@ -1,7 +1,7 @@
 #ifndef ARRAY
-#define SIZE 1000
-int arr[SIZE];
 #define ARRAY
+#define SIZE 100
+extern int arr[SIZE];
 #endif
 
 int max_element(int len);
