@@ -21,12 +21,12 @@ bool is_char(char c)
 
 char to_lower(char c)
 {
-	c >= 'a' ? c : c - 'A' + 'a';
+	return (c >= 'a' && c <= 'z') ? c : (c - 'A' + 'a');
 }
 
 void print_freq()
 {
 	for(int i = 0; i < 26; i++)
 		if(freq[i])
-			printf("%c : %d", 'a' + i, freq[i]);
+			printf("%c : %d\n", 'a' + i, freq[i]);
 }
