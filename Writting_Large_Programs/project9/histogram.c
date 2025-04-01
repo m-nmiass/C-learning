@@ -1,4 +1,5 @@
 #include"histogram.h"
+#include<stdio.h>
 
 int histo[26] = {0};
 
@@ -15,7 +16,7 @@ void read_line()
 
 char to_lower(char c)
 {
-	return (c >= 'a' ? c : c - 'a' + 'A');
+	return (c >= 'a' ? c : (c - 'A' + 'a'));
 }
 
 bool is_char(char c)
