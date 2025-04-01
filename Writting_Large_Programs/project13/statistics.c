@@ -1,25 +1,25 @@
 #include<stdio.h>
+#include"statistics.h"
+#include<limits.h>
 
 int sum = 0;
 int max = INT_MIN;
 int min = INT_MAX;
 
-void read_line()
+void read_line(int counter)
 {
-	char ch;
-	int i;
-	while(1) {
-		if((scanf("%d", &i)) == 1) {
-			sum += i;
-			if(max < i)
-				max = i;
-			if(min > i)
-				min = i;
+	int i ;
+	while(counter) {
+		scanf("%d", &i);
+		sum += i;
+		counter--;
+		if(max < i) {
+			max = i;
 		}
-		else {
-			ch = getchar();
-			if(ch == '\n')
-				break;
+
+		if(min > i) {
+			min = i;
 		}
 	}
 }
+
