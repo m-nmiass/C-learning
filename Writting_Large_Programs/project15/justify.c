@@ -1,7 +1,7 @@
 #include"justify.h"
 
-char word[MAX_WORD + 2];
-char line[MAX_LINE + 1];
+char word[MAX_WORDS + 2] = {'\0'};
+char line[MAX_LINE + 1] = {'\0'};
 
 void read_lines()
 {
@@ -13,15 +13,14 @@ void read_lines()
 	while((ch = getchar()) != '\n'){
 		if(!is_space(ch)){
 			is_word = true;
-			if(word_count < MAX_WORD){
+			if(word_count < MAX_WORDS){
 				word[word_count] = ch;
 				word_count++;
 			}
-			else if(word_count == MAX_WORD)
-				word[word_count] = '*';
 		}
 	
 		if(is_space(ch) && is_word){
+			is_word = false;
 			if(line_count + word_count < MAX_LINE){
 				merge(&word_count);
 				line[++line_count] = ' ';
@@ -34,7 +33,7 @@ void read_lines()
 				line[0] = '\0';
 			}
 			else if(line_count + word_count > MAX_LINE){
-				line(line_count) = '\0';
+				line[line_count] = '\0';
 				add_spaces(MAX_LINE-(word_count + line_count));
 				printf("%s\n", line);
 				line[0] = '\0';
@@ -45,11 +44,17 @@ void read_lines()
 	}
 }
 
-void merge(char *word_count)
+void merge(int *word_count)
 {
-	word_count < 20 ? word[word_count] = '\0' : word[word_count+2] = '\0';
-	strcat(line, word);
-	word_count = 0;
+    if(*word_count >= MAX_WORDS) {
+        word[MAX_WORDS] = '*';      
+        word[MAX_WORDS + 1] = '\0'; 
+    } else {
+        word[*word_count] = '\0';   
+    }
+
+    strcat(line, word);
+    *word_count = 0;
 }
 
 bool is_space(char ch)
@@ -61,7 +66,7 @@ void ft_swap(char *a, char *b)
 {
 	char temp = *a;
 	*a = *b;
-	*b = *a;
+	*b = temp;
 }
 
 void add_spaces(int count)
@@ -79,6 +84,6 @@ void move(int start)
 {
 	char temp = line[start++];
 	for(; line[start] != '\0'; start++) {
-		ft_swap(temp, line[start]);
+		ft_swap(&temp, &line[start]);
 	}
 }
