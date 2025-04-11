@@ -31,8 +31,8 @@ void update_part(int max, int place)
 	for(; i < max; i++)
 		if(inventory[i].part_number == place)
 			break;
-	if(inventory[i].part_number == max){
-		printf("Number ot found.\n");
+	if(i == max){
+		printf("Number not found.\n");
 		return;
 	}
 	printf("Enter change in quality hand : ");
