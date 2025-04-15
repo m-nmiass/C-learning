@@ -21,6 +21,8 @@ int main()
 	printf("The reverse strng is : ");
 	for(int i = size - 1; i >= 0; i--)
 		printf("%c", p[i]);
+	
+	free(p);
 
 	return 0;
 }
