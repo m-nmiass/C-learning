@@ -14,7 +14,7 @@ void read_text()
 		}
 
 		else if(is_space(ch) && is_word) {
-			printf(" ", ch);
+			printf(" ");
 			is_word = false;
 		}
 	}
