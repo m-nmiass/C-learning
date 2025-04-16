@@ -12,9 +12,10 @@ int main()
 		printf("2 : delete the last book\n");
 		printf("3 : print all books\n");
 		printf("4 : delete all books\n");
-		printf("5 : exist\n");
+		printf("5 : exist\n\n");
 		printf("the command is : ");
 		scanf("%d", &choice);
+		clear_cach();
 
 		switch(choice){
 			case  1 :
@@ -35,5 +36,6 @@ int main()
 				printf("Invalid number try agan.\n");
 				break;
 		}
+		printf("\n");
 	}
 }
