@@ -48,7 +48,7 @@ int main()
 				printf("Invalid number try again : ");
 		}while(new_count <= 0);
 
-		p = realloc(p, count + new_count);
+		p = realloc(p, (count + new_count)*sizeof(int));
 
 		printf("Enter the added elements : ");
 		for(int i = count; i < count + new_count; i++)
