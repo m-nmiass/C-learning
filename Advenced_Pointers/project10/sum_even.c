@@ -24,4 +24,6 @@ int main()
 	}
 
 	printf("The sum of all even numbers is : %d", even_sum);
+
+	free(p);
 }
