@@ -19,10 +19,10 @@ void read_author(book info_book[])
 		if(i < MAX_NAME)
 			info_book[0].author[i++] = ch;
 	}
-	info_book[0].book_name[i++] = '\0';
+	info_book[0].author[i++] = '\0';
 }
 
-void add_book(book info_book[]);
+void add_book(book info_book[])
 {
 	int book_serie;
 	int book_pages;
@@ -56,7 +56,7 @@ void remove_books(int *max)
 	*max = 0;
 }
 
-void add_books(int max, book info_book[]);
+void add_books(int max, book info_book[])
 {
 	for(int i = 1; i < max; i++)
 		add_book(info_book + i - 1);
