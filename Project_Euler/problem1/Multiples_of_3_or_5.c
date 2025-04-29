@@ -21,7 +21,7 @@ int sum_of_multiples(int *num)
 {
 	printf("Numbers that are multiples of 3 and 5 are : ");
 	int sum = 0;
-	for(int i = 1; i <= *num; i++){
+	for(int i = 1; i < *num; i++){
 		if((i % 3 == 0) || (i % 5 == 0)){
 			sum += i;
 			printf("%d ", i);
